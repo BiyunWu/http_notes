@@ -200,24 +200,29 @@ Let's look at how we'd refer to some of the previous commits. Since `HEAD` poi
   * `HEAD^^^2` is the `4c9749e` commit (this is the grandparent's (`HEAD^^`) **_second parent_ **(`^2`))
 
 ## Working with Remotes
-#### Show reomote path: `git remote -v`
+  Show reomote path: `git remote -v`
 
-### `git add remote url`
-### `git push <remote-shortname> <branch>`
-### `git pull <remote-shortname> <branch>`
+  * `git add remote url`
+  * `git push <remote-shortname> <branch>`
+  * `git pull <remote-shortname> <branch>`
 
-### `git pull origin master` vs `git fertch origin master`
+**`git pull origin master` vs `git fertch origin master`**
+
   Pull makes a fast forward merge. However, fertch pull the origin/master to local repository but not merge it with the local master, that keeps the local master HEAD at its original state. In order to merge them, use `git merge origin/master`
 
 ## Review other's commits
-#### `git shortlog`: displays an alphabetical list of names and the commit messages that go along with them.
-#### If we just want to see just the number of commits that each developer has made, we can add a couple of flags: -s to show just the number of commits (rather than each commit's message) and -n to sort them numerically (rather than alphabetically by author name): `git shortlog -s -n`
-#### Search someone's commit according to his/her name: `git log --author=Name`
-#### `git log --oneline --author=Name`
+  ** `git shortlog`**: displays an alphabetical list of names and the commit messages that go along with them.
+
+  If we just want to see just the number of commits that each developer has made, we can add a couple of flags: -s to show just the number of commits (rather than each commit's message) and -n to sort them numerically (rather than alphabetically by author name): `git shortlog -s -n`
+#### Search someone's commit according to his/her name:
+  `git log --author=Name`
+
+  `git log --oneline --author=Name`
 
 ## Filter Commits By Search
-#### `git show SHA_code`
-#### `git log --grep=key_word`
+  **`git show SHA_code`**
+
+  **`git log --grep=key_word`**
 > If you were to run `git log --grep "fort"`, then Git will display only the commits that have the character `f` followed by the character `o` followed by `r` followed by `t`.
 
 
