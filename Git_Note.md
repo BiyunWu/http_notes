@@ -189,15 +189,15 @@ The way that Git determines if it erases, stages previously committed changes, o
     * a879849 Add header to blog
     * 94de470 Initial commit
 
-Let's look at how we'd refer to some of the previous commits. Since `HEAD` points to the `9ec05ca` commt:
+  Let's look at how we'd refer to some of the previous commits. Since `HEAD` points to the `9ec05ca` commt:
 
-  * `HEAD^` is the `db7e87a` commit
-  * `HEAD~1` is also the `db7e87a` commit
-  * `HEAD^^` is the `796ddb0` commit
-  * `HEAD~2` is also the `796ddb0` commit
-  * `HEAD^^^` is the `0c5975a` commit
-  * `HEAD~3` is also the `0c5975a` commit
-  * `HEAD^^^2` is the `4c9749e` commit (this is the grandparent's (`HEAD^^`) **_second parent_ **(`^2`))
+    * `HEAD^` is the `db7e87a` commit
+    * `HEAD~1` is also the `db7e87a` commit
+    * `HEAD^^` is the `796ddb0` commit
+    * `HEAD~2` is also the `796ddb0` commit
+    * `HEAD^^^` is the `0c5975a` commit
+    * `HEAD~3` is also the `0c5975a` commit
+    * `HEAD^^^2` is the `4c9749e` commit (this is the grandparent's (`HEAD^^`) **_second parent_ **(`^2`))
 
 ## Working with Remotes
   Show reomote path: `git remote -v`
@@ -240,14 +240,29 @@ Let's look at how we'd refer to some of the previous commits. Since `HEAD` poi
 
   * [Direction video](https://youtu.be/cL6ehKtJLUM)
 
+#### Rebase Commands
+
+> Let's take another look at the different commands that you can do with `git rebase`:
+
+> * use `p` or `pick` – to keep the commit as is
+  * use `r` or `reword` – to keep the commit's content but alter the commit message
+  * use `e` or `edit` – to keep the commit's content but stop before committing so that you can:
+    * add new content or files
+    * remove content or files
+    * alter the content that was going to be committed
+  * use `s` or `squash` – to combine this commit's changes into the previous commit (the commit above it in the list)
+  * use `f` or `fixup` – to combine this commit's change into the previous one but drop the commit message
+  * use `x` or `exec` – to run a shell command
+  * use `d` or `drop` – to delete the commit
+
+  interactive rebase: git rebase -i <base>
+
+  interactively rebase the commits to the one that's 3 before the current one: git rebase -i HEAD~3
+
+
 #### Force Pushing
   **⚠️DANGER ⚠️**
 
-  After squashing the commits, GitHub would reject the push request since it needs to deletes those squashed commits. To deal with this situation, use `git push -f` command.
-
-
-
-
-
+> After squashing the commits, GitHub would reject the push request since it needs to deletes those squashed commits. To deal with this situation, use `git push -f` command.
 
 
