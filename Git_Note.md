@@ -210,8 +210,8 @@ Let's look at how we'd refer to some of the previous commits. Since `HEAD` poi
 
   Pull makes a fast forward merge. However, fertch pull the origin/master to local repository but not merge it with the local master, that keeps the local master HEAD at its original state. In order to merge them, use `git merge origin/master`
 
-## Review other's commits
-  ** `git shortlog`**: displays an alphabetical list of names and the commit messages that go along with them.
+#### Review other's commits
+  `git shortlog`: displays an alphabetical list of names and the commit messages that go along with them.
 
   If we just want to see just the number of commits that each developer has made, we can add a couple of flags: -s to show just the number of commits (rather than each commit's message) and -n to sort them numerically (rather than alphabetically by author name): `git shortlog -s -n`
 #### Search someone's commit according to his/her name:
@@ -219,12 +219,31 @@ Let's look at how we'd refer to some of the previous commits. Since `HEAD` poi
 
   `git log --oneline --author=Name`
 
-## Filter Commits By Search
+#### Filter Commits By Search
   **`git show SHA_code`**
 
   **`git log --grep=key_word`**
 > If you were to run `git log --grep "fort"`, then Git will display only the commits that have the character `f` followed by the character `o` followed by `r` followed by `t`.
 
+#### Renameing Remotes
+`git remote rename original_name new_name`: It is applicable to both upstream and origin(own or forked repos).
+
+#### Retrieving Upstream Changes
+  **`git fetch upstream master`**
+
+#### Squashing Commits
+  Use `git rebase` to squash commmits.
+
+  * `git rebase -i HEAD~commits_amount`: **`git rebase -i HEAD~3`** will suqashing the most 3 rencent commits into 1 commits, and this command also deletes those 3 commits without warning. The `~3` part means "three before".
+
+  * In order to keep the squashed commits in the repo, it is a good habit to add a new branch auch as "backup" at the HEAD before squashing.
+
+  * [Direction video](https://youtu.be/cL6ehKtJLUM)
+
+#### Force Pushing
+  **⚠️DANGER ⚠️**
+
+  After squashing the commits, GitHub would reject the push request since it needs to deletes those squashed commits. To deal with this situation, use `git push -f` command.
 
 
 
