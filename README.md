@@ -93,10 +93,10 @@
   >There are dozens of different status codes. The first digit of the status code indicates the general success of the request. As a shorthand, web developers describe all of the codes starting with **2** as **"2xx"** codes, for instance — the x's mean "any digit".
 
   >* **1xx — Informational. **The request is in progress or there's another step to take.
-  * **2xx — Success!** The request succeeded. The server is sending the data the client asked for.
-  * **3xx — Redirection.** The server is telling the client a different URI it should redirect to. The headers will usually contain a **Location** header with the updated URI. Different codes tell the client whether a redirect is permanent or temporary.
-  * **4xx — Client error.** The server didn't understand the client's request, or can't or won't fill it. Different codes tell the client whether it was a bad URI, a permissions problem, or another sort of error.
-  * **5xx — Server error.** Something went wrong on the server side.
+  >* **2xx — Success!** The request succeeded. The server is sending the data the client asked for.
+  >* **3xx — Redirection.** The server is telling the client a different URI it should redirect to. The headers will usually contain a **Location** header with the updated URI. Different codes tell the client whether a redirect is permanent or temporary.
+  >* **4xx — Client error.** The server didn't understand the client's request, or can't or won't fill it. Different codes tell the client whether it was a bad URI, a permissions problem, or another sort of error.
+  >* **5xx — Server error.** Something went wrong on the server side.
 
   A header is made up of a keyword, a colon and a value.
 
